@@ -37,7 +37,7 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            if (Rigidbody2D.velocity.x > 0)
+            if (transform.localScale.x == 1)
             {
                 var knockback = new Vector2(knockbackX, knockbackY);
                 Debug.Log(enemy.attachedRigidbody.position);
@@ -46,12 +46,16 @@ public class PlayerCombat : MonoBehaviour
 
 
             }
-            else if (Rigidbody2D.velocity.x < 0)
+            else if (transform.localScale.x == -1)
             {
                 var knockback = new Vector2(-knockbackX, knockbackY);
                 Debug.Log(enemy.attachedRigidbody.position);
                 Debug.Log("facing left");
                 enemy.attachedRigidbody.AddForce(knockback * 100);
+            }
+            else
+            {
+
             }
 
         }
