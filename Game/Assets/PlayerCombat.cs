@@ -22,7 +22,6 @@ public class PlayerCombat : MonoBehaviour
     }
     void Update()
     {
-<<<<<<< HEAD
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
             Attack();
@@ -63,52 +62,4 @@ public class PlayerCombat : MonoBehaviour
     {
         Gizmos.DrawWireSphere(hitIndicator.position, hitRange);
     }
-
-=======
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Attack();
-        }
-    }
-
-    void Attack()
-    {
-
-
-        animator.SetTrigger("Attack");
-        hitEnemies = Physics2D.OverlapCircleAll(hitIndicator.position, hitRange, layerMask);
-
-        foreach (Collider2D enemy in hitEnemies)
-        {
-            if (transform.localScale.x == 1)
-            {
-                var knockback = new Vector2(knockbackX, knockbackY);
-                Debug.Log(enemy.attachedRigidbody.position);
-                Debug.Log("facing right");
-                enemy.attachedRigidbody.AddForce(knockback * 100);
-
-
-            }
-            else if (transform.localScale.x == -1)
-            {
-                var knockback = new Vector2(-knockbackX, knockbackY);
-                Debug.Log(enemy.attachedRigidbody.position);
-                Debug.Log("facing left");
-                enemy.attachedRigidbody.AddForce(knockback * 100);
-            }
-            else
-            {
-
-            }
-
-        }
-
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(hitIndicator.position, hitRange);
-    }
-
->>>>>>> DWb
 }
