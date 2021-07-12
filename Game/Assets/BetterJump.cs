@@ -4,29 +4,29 @@ using UnityEngine;
 
 public class BetterJump : MonoBehaviour
 {
-    Rigidbody2D rigidbody2D;
-    [SerializeField] private float fallMultiplier = 2.5f;
-    [SerializeField] private float jumpMultiplier = 2f;
+    Rigidbody2D mRB;
+    [SerializeField] private float mFallMultiplier = 2.5f;
+    [SerializeField] private float mJumpMultiplier = 2f;
      // Start is called before the first frame update
      void Start()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        mRB = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(rigidbody2D.velocity.y>0)
+        if(mRB.velocity.y>0)
         {
-            rigidbody2D.gravityScale = jumpMultiplier;
+            mRB.gravityScale = mJumpMultiplier;
         }
-        else if(rigidbody2D.velocity.y<0)
+        else if(mRB.velocity.y<0)
         {
-            rigidbody2D.gravityScale = fallMultiplier;
+            mRB.gravityScale = mFallMultiplier;
         }
         else
         {
-            rigidbody2D.gravityScale = 1;
+            mRB.gravityScale = 1;
         }
     }
 }
