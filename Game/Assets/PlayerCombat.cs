@@ -7,14 +7,14 @@ public class PlayerCombat : MonoBehaviour
     public Animator animator;
     Rigidbody2D Rigidbody2D;
 
-    public Collider2D[] hitEnemies;
     public LayerMask layerMask;
     public Transform hitIndicator;
-    public float hitRange = 0.5f;
-    public int knockbackX = 1;
-    public int knockbackY = 1;
+    public Transform mTransfrom;
+    public int knockbackX;
+    public int knockbackY;
 
-    // Update is called once per frame
+    private Collider2D[] hitEnemies;
+    private float hitRange = 1.2f;
 
     private void Start()
     {
@@ -30,23 +30,23 @@ public class PlayerCombat : MonoBehaviour
 
     void Attack()
     {
-
-
         animator.SetTrigger("Attack");
-        hitEnemies= Physics2D.OverlapCircleAll(hitIndicator.position, hitRange, layerMask);
+        CheckHit();
 
-        foreach(Collider2D enemy in hitEnemies)
+    }
+    public void CheckHit() {
+        hitEnemies = Physics2D.OverlapCircleAll(hitIndicator.position, hitRange, layerMask);
+
+        foreach (Collider2D enemy in hitEnemies)
         {
-            if(Rigidbody2D.velocity.x>0)
+            if (mTransfrom.localScale.x > 0)
             {
                 var knockback = new Vector2(knockbackX, knockbackY);
                 Debug.Log(enemy.attachedRigidbody.position);
                 Debug.Log("facing right");
-                enemy.attachedRigidbody.AddForce(knockback*100);
-
-
+                enemy.attachedRigidbody.AddForce(knockback * 100);
             }
-            else if(Rigidbody2D.velocity.x < 0)
+            else if (mTransfrom.localScale.x < 0)
             {
                 var knockback = new Vector2(-knockbackX, knockbackY);
                 Debug.Log(enemy.attachedRigidbody.position);
@@ -55,7 +55,6 @@ public class PlayerCombat : MonoBehaviour
             }
 
         }
-
     }
 
     private void OnDrawGizmos()

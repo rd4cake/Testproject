@@ -4,43 +4,48 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
+    public float mVelocity;
+    public bool mMovingRight = true;
+    public Transform mGroundDetection;
+    
+    private float mDistance = 2;
+    
+    Rigidbody2D mRB;
+    AIPathfinding mAIPathfinding;
 
-    public float velocity;
-    public float distance;
-    public bool movingright = true;
-    public Transform grounddetection;
-    Rigidbody2D rb2d;
     // Start is called before the first frame update
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        mRB = GetComponent<Rigidbody2D>();
+        mAIPathfinding = GetComponent<AIPathfinding>();
+        mAIPathfinding.enabled = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        RaycastHit2D groundinfo = Physics2D.Raycast(grounddetection.position, Vector2.down, distance);
-        Debug.DrawRay(grounddetection.position, Vector2.down * (distance), Color.green);
-        if (movingright == true)
+        RaycastHit2D groundinfo = Physics2D.Raycast(mGroundDetection.position, Vector2.down, mDistance);
+        Debug.DrawRay(mGroundDetection.position, Vector2.down * (mDistance), Color.green);
+        if (mMovingRight == true)
         {
-            rb2d.velocity = new Vector2(velocity, rb2d.velocity.y);
+            mRB.velocity = new Vector2(mVelocity, mRB.velocity.y);
         }
         else
         {
-            rb2d.velocity = new Vector2(-velocity, rb2d.velocity.y);
+            mRB.velocity = new Vector2(-mVelocity, mRB.velocity.y);
         }
         if (groundinfo.collider == false)
         {
-            if (movingright == true)
+            if (mMovingRight == true)
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
-                movingright = false;
+                mMovingRight = false;
 
             }
             else
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
-                movingright = true;
+                mMovingRight = true;
             }
         }
 

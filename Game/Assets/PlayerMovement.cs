@@ -9,10 +9,6 @@ public class PlayerMovement : MonoBehaviour
     public float mRunSpeed;
     private float mHorizontalMovement;
     private bool mJump;
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
