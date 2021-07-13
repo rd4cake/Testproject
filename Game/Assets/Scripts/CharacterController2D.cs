@@ -144,7 +144,7 @@ public class CharacterController2D : MonoBehaviour
 
 		if (m_Grounded && jump)
 		{
-			m_Rigidbody2D.velocity = Vector2.up * m_JumpForce;
+			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, m_JumpForce);
 			m_isJumping = true;
 			m_jumpTimeCounter = m_jumpTime;
 		}
@@ -152,7 +152,7 @@ public class CharacterController2D : MonoBehaviour
         {
 			if(m_jumpTimeCounter>0)
             {
-				m_Rigidbody2D.velocity = Vector2.up * m_JumpForce;
+				m_Rigidbody2D.AddForce(new Vector2(0, m_JumpForce)*3);
 				m_jumpTimeCounter -= Time.deltaTime;
 			}
 			else
