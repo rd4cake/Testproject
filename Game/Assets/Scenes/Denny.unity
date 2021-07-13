@@ -213,14 +213,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7167147270273885832, guid: 7f19c87765df8b2408e4b9982e7c54ef, type: 3}
-      propertyPath: m_jumpTime
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7167147270273885832, guid: 7f19c87765df8b2408e4b9982e7c54ef, type: 3}
-      propertyPath: m_JumpForce
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 7167147270273885837, guid: 7f19c87765df8b2408e4b9982e7c54ef, type: 3}
       propertyPath: m_Name
       value: Player1
@@ -268,10 +260,6 @@ PrefabInstance:
     - target: {fileID: 7167147270273885845, guid: 7f19c87765df8b2408e4b9982e7c54ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7167147270273885847, guid: 7f19c87765df8b2408e4b9982e7c54ef, type: 3}
-      propertyPath: mJumpMultiplier
-      value: 5.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f19c87765df8b2408e4b9982e7c54ef, type: 3}
