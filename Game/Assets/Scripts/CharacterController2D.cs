@@ -10,7 +10,8 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
 	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
-	[SerializeField] private Collider2D m_CrouchDisableCollider;				// A collider that will be disabled when crouching
+	[SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
+	[SerializeField] private float m_jumpTime;
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
@@ -18,6 +19,9 @@ public class CharacterController2D : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+	private bool m_isJumping;
+	private bool jumpHold;
+	private float m_jumpTimeCounter =0.35f;
 
 	[Header("Events")]
 	[Space]
@@ -43,8 +47,17 @@ public class CharacterController2D : MonoBehaviour
 
     private void Update()
     {
-        
-    }
+		if (Input.GetKey(KeyCode.Space))
+        {
+			jumpHold = true;
+        }
+
+		if (Input.GetKeyUp(KeyCode.Space))
+		{
+			m_isJumping = false;
+		}
+
+	}
     private void FixedUpdate()
 	{
 		bool wasGrounded = m_Grounded;
@@ -127,14 +140,27 @@ public class CharacterController2D : MonoBehaviour
 				Flip();
 			}
 		}
-		// If the player should jump...
+		// If the player should jump..
+
 		if (m_Grounded && jump)
 		{
-			// Add a vertical force to the player.
-			m_Grounded = false;
-			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce),ForceMode2D.Impulse);
-			//m_Rigidbody2D.velocity += new Vector2(0f, m_JumpForce);
+			m_Rigidbody2D.velocity = Vector2.up * m_JumpForce;
+			m_isJumping = true;
+			m_jumpTimeCounter = m_jumpTime;
 		}
+		if (jumpHold && m_isJumping)
+        {
+			if(m_jumpTimeCounter>0)
+            {
+				m_Rigidbody2D.velocity = Vector2.up * m_JumpForce;
+				m_jumpTimeCounter -= Time.deltaTime;
+			}
+			else
+            {
+				m_isJumping = false;
+            }
+		}
+
 	}
 
 
