@@ -25,7 +25,6 @@ public class AIPathfinding : MonoBehaviour
         mSeeker = GetComponent<Seeker>();
         mRB = GetComponent<Rigidbody2D>();
         InvokeRepeating("UpdatePath", 0f, .5f);
-        
     }
 
     private void UpdatePath() {
@@ -65,7 +64,6 @@ public class AIPathfinding : MonoBehaviour
         if (distance < mNextWaypointDistance) {
             mCurrentWaypoint++;
         }
-        Debug.Log(direction);
         if (direction.x >= 0.1f)
         {
             mEnemyGFX.localScale = new Vector3(1f, 1f, 1f);

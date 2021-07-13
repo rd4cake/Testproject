@@ -140,8 +140,8 @@ public class CharacterController2D : MonoBehaviour
 				Flip();
 			}
 		}
-		// If the player should jump..
 
+		// If the player should jump..
 		if (m_Grounded && jump)
 		{
 			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, m_JumpForce);
@@ -149,16 +149,16 @@ public class CharacterController2D : MonoBehaviour
 			m_jumpTimeCounter = m_jumpTime;
 		}
 		if (jumpHold && m_isJumping)
-        {
-			if(m_jumpTimeCounter>0)
-            {
-				m_Rigidbody2D.AddForce(new Vector2(0, m_JumpForce)*3);
+		{
+			if (m_jumpTimeCounter > 0)
+			{
+				m_Rigidbody2D.AddForce(new Vector2(0, m_JumpForce) * 2.2f);
 				m_jumpTimeCounter -= Time.deltaTime;
 			}
 			else
-            {
+			{
 				m_isJumping = false;
-            }
+			}
 		}
 
 	}
