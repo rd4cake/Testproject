@@ -55,6 +55,10 @@ public class AIPathfinding : MonoBehaviour
             mReachedEndOfPath = false;
                 }
         Vector2 direction = ((Vector2)mPath.vectorPath[mCurrentWaypoint] - mRB.position).normalized;
+        if (gameObject.tag == "GroundEnemy")
+        {
+            direction.y = 0;
+        }
         Vector2 force = direction * mSpeed * Time.deltaTime;
 
         mRB.AddForce(force);
@@ -64,11 +68,11 @@ public class AIPathfinding : MonoBehaviour
         if (distance < mNextWaypointDistance) {
             mCurrentWaypoint++;
         }
-        if (direction.x >= 0.1f)
+        if (mTarget.position.x > mEnemy.position.x)
         {
             mEnemyGFX.localScale = new Vector3(1f, 1f, 1f);
         }
-        else if (direction.x <= -0.1)
+        else if (mTarget.position.x < mEnemy.position.x)
         {
             mEnemyGFX.localScale = new Vector3(-1f, 1f, 1f);
         }

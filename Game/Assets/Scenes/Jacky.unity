@@ -244,7 +244,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1152
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 1
@@ -378,7 +378,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1152
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 1
@@ -505,7 +505,7 @@ Rigidbody2D:
   m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 41ec3eded7244784a8ae8937b6fe7833, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -525,7 +525,7 @@ MonoBehaviour:
   mTarget: {fileID: 109235103}
   mEnemy: {fileID: 546178059}
   mEnemyGFX: {fileID: 912898308}
-  mSpeed: 5
+  mSpeed: 2000
   mNextWaypointDistance: 3
 --- !u!114 &546178058
 MonoBehaviour:
@@ -579,7 +579,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 546178055}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 41ec3eded7244784a8ae8937b6fe7833, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -707,7 +707,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1152
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 1
@@ -836,7 +836,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1152
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 1
@@ -965,7 +965,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1152
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 1
@@ -1085,14 +1085,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186794776}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 509e3c60aaa74c64daa54b6031e825fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mVelocity: 5
-  mMovingRight: 1
   mGroundDetection: {fileID: 1899658516}
+  mEnemy: {fileID: 1186794781}
 --- !u!50 &1186794778
 Rigidbody2D:
   serializedVersion: 4
@@ -1109,7 +1109,7 @@ Rigidbody2D:
   m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 41ec3eded7244784a8ae8937b6fe7833, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -1123,7 +1123,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1186794776}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 41ec3eded7244784a8ae8937b6fe7833, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1199,7 +1199,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186794776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -9.59, z: 0}
+  m_LocalPosition: {x: 0, y: -9.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1899658516}
@@ -1215,7 +1215,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1186794776}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 41ec3eded7244784a8ae8937b6fe7833, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1229,7 +1229,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186794776}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15bdb585c6d5ca340bab0dee6e924eab, type: 3}
   m_Name: 
@@ -1237,7 +1237,7 @@ MonoBehaviour:
   mTarget: {fileID: 109235103}
   mEnemy: {fileID: 1186794781}
   mEnemyGFX: {fileID: 1186794781}
-  mSpeed: 5
+  mSpeed: 2000
   mNextWaypointDistance: 3
 --- !u!114 &1186794784
 MonoBehaviour:
@@ -1319,6 +1319,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1523785601, guid: 7f19c87765df8b2408e4b9982e7c54ef, type: 3}
+      propertyPath: m_Radius
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7167147270273885837, guid: 7f19c87765df8b2408e4b9982e7c54ef, type: 3}
       propertyPath: m_Name
       value: Player1
@@ -1367,8 +1371,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7453062968905720542, guid: 7f19c87765df8b2408e4b9982e7c54ef, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f19c87765df8b2408e4b9982e7c54ef, type: 3}
 --- !u!1 &1329377969
 GameObject:
@@ -1491,7 +1494,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1152
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 1
@@ -1620,7 +1623,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1152
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 1
@@ -1749,7 +1752,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1152
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 1
@@ -1878,7 +1881,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1152
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 1
@@ -2007,7 +2010,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1152
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 1
@@ -2046,7 +2049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACYn+tDS/50VwIAAPcEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMziWDwU2gtxYI6YHAhHRy8UVIa1uDLHkkOXxk+O9dyTZ26cnrt293337YX0QoWwJz2qyM4GvNgfwYEG+Tb4PO+QInmmm1ExdoOR+Cu9yTaOC8USc04pEPs7oAZwT7qTLpySMEKyVSbYolz2CurbMIp1RaQJfRzkcrhL4G5ISP4cyHnNEaP3nrgtZsNLiiyUA5MB119PC9oQ7jYHpuTa0Uk7QogXvdXUQ8bnNPAk1hRw3Dq2daSmEbOcSdy9DurszBgO+XC4rdBQnRwwSBHESWO5+vH71JUwuuad7Q80IYHFOdlvzS9ewKag+1sE8qK1/oMQ6a6pzr/9zDKLhTo4uXtmw08iVcLtjhjZ4Zta432z686CkP4zlSeaB7CR85qFe9MrpSHJ3OVD60sjBedK+3zuY5sEOH11LvwKrsbagZd7tI38M1NH+aS1HswxLjGthJHeYd9g8GN/MbBYfrsE0KRL2KPxbeadY/o8bxLIx16Gq6VF7eXlfGU8kyzMx3U7m5NgoC3IguQVHpzltM4+43eOfrlb3zPFP/wTTFG1/7HdyFBLjjj0Z3rq0+3pZlc31cg803lZNCQSfaO15xTnOtVH1g/Zm0YbvKpJT1wrJK8H9Pi6Qx449TGkXpNIondDrE9+lstk8nE/7E6HhPwu0JhX1Sua2FNuPBrakuucI7a/8jg5WhZTh2buhxJS6F7o1cqFTvmAFQmzrDTTgYLIJfJV9ygQPagXNChX2Tr4RIzQ7Ak1uiJHS6PDlDky5LQkrxqZ1HEjIPP46EXMn1L1BLAwQUAAAICAAAmJ/rMw/ZaWwAAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0UppJcoqZRaKhYZqFoYlxooUukG9haZmUZmycYp6caJSkFAtUX1JZkOqXmJsK0ROQWJKRlpmXkpmXrudelJniDjJaKbYWAFBLAQItABQAAAgIAACYn+tDS/50VwIAAPcEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACYn+szD9lpbAAAAHgAAAAJACQAAAAAAAAAAAAAAKQCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAWwMAAAAA
+    dataString: UEsDBBQAAAgIAACYn+tpR+xVVwIAAPcEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMziWDwU2gtxYI6YHAhHRy8UVIa6xBljySHD4y/PeuZBu77snrt293337YX0QoWwBz2qyM4GvNgfwYEG+Tb4PW+QJnetBqJ67QcD4Ed5kn0cB5o05oxCMfZnUOzgj2Ux2kJ48QLJVItcmX/ABzbZ1FOKXSArqMdj5aIfQ1IGd8DGc+5ILW+MlbV7Rmo8ENTQbKgWmpo4fvNXUYB9NzK2qpmKR5AdzrbiPicZN7EmgKO6oZXj3TUgpbyyHuUoR2d0UGBny/XFDsLkiIHmIEMhCHzPl83ehNmlpwdfOGXhbC4JiqtOSXrmaXU3ushH1SWfpCj3HQVOVc/+ceRsGdGp2/NGWjkS/hMsGOb/TCqHWd2XbhRUd5GM+JyiPdS/jIQL3qldGl4uh0pvShpYXxon29dzbPgB1bvJLaA8uis6F63M0ifQ+30Px5LkW+D0uMK2AndZh32D8Y3MxvFByuw9YpEPUq/lh4p4fuGdWOZ2GsQ1fdpfLy9ro0nkqWYWa+m9LNtVEQ4Fp0AYpKd9liGtffYM/XKdvzPFP/wdTFa1/zHfRCAtzyR6Oea6tP92XZTJ/WYLNN6aRQ0Ir2jlec01wrVR1YdyZN2K40KWWdsEMp+L+nRdKY8ccpjaJ0GsUTOh3i+3Q226eTCX9idLwn4faEwj6p3FZC6/Hg1lSbXOGdNf+RwcrQIhw7N/S0Etdcd0YuVKp3zACoTZXhLhwMFsGvki+5wAHtwDmhwr7JV0KkZkfgyT1REjpdnp2hSZslIYX41M4jCZmHH0dCbuT2F1BLAwQUAAAICAAAmJ/rMw/ZaWwAAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0UppJcoqZRaKhYZqFoYlxooUukG9haZmUZmycYp6caJSkFAtUX1JZkOqXmJsK0ROQWJKRlpmXkpmXrudelJniDjJaKbYWAFBLAQItABQAAAgIAACYn+tpR+xVVwIAAPcEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACYn+szD9lpbAAAAHgAAAAJACQAAAAAAAAAAAAAAKQCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAWwMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -2074,7 +2077,39 @@ MonoBehaviour:
     _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
     _AreaColors:
     - {r: 0, g: 0, b: 0, a: 0}
-  tagNames: []
+  tagNames:
+  - Basic Ground
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
@@ -2222,7 +2257,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1152
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 1
@@ -2351,7 +2386,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1152
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 1
@@ -2480,7 +2515,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1152
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 1
@@ -2639,7 +2674,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1152
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 1
@@ -2768,7 +2803,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1152
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 1

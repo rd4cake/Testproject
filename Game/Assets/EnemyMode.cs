@@ -7,8 +7,8 @@ public class EnemyMode : MonoBehaviour
     {
         if (target.tag == "GroundEnemy")
         {
-            target.gameObject.GetComponent<AIPathfinding>().enabled = false;
-            target.gameObject.GetComponent<EnemyPatrol>().enabled = true;
+            target.gameObject.GetComponent<AIPathfinding>().enabled = true;
+            target.gameObject.GetComponent<EnemyPatrol>().enabled = false;
         }
     }
 
@@ -16,8 +16,8 @@ public class EnemyMode : MonoBehaviour
     {
         if (target.tag == "GroundEnemy")
         {
-            target.gameObject.GetComponent<AIPathfinding>().enabled = true;
-            target.gameObject.GetComponent<EnemyPatrol>().enabled = false;
+            target.gameObject.GetComponent<AIPathfinding>().enabled = false;
+            target.gameObject.GetComponent<EnemyPatrol>().enabled = true;
         }
     }
 }
